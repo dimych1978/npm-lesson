@@ -28,7 +28,7 @@ export const loginRender = ({ fetchAndRender }) => {
     login({ login: loginElement.value, password: passwordElement.value })
       .then((response) => {
         if (response.status == 400) {
-          throw new Error("Данные введены неверно");
+          throw new Error('Данные введены неверно');
         }
         console.log(response);
         newToken(response.user.token);
