@@ -1,9 +1,9 @@
-import { login, newToken } from "./api.js";
+import { login, newToken } from './api.js';
 
 export let userName;
 
 export const loginRender = ({ fetchAndRender }) => {
-  const appElement = document.getElementById("app");
+  const appElement = document.getElementById('app');
   const loginHTML = `    <h1>Страница входа</h1>
     <div class="form">
       <h3 class="form-title">Форма входа</h3>
@@ -20,11 +20,11 @@ export const loginRender = ({ fetchAndRender }) => {
     </div>`;
   appElement.innerHTML = loginHTML;
 
-  const buttonLogin = document.getElementById("input-button");
-  const loginElement = document.getElementById("login-input");
-  const passwordElement = document.getElementById("password-input");
+  const buttonLogin = document.getElementById('input-button');
+  const loginElement = document.getElementById('login-input');
+  const passwordElement = document.getElementById('password-input');
 
-  buttonLogin.addEventListener("click", () => {
+  buttonLogin.addEventListener('click', () => {
     login({ login: loginElement.value, password: passwordElement.value })
       .then((response) => {
         if (response.status == 400) {
